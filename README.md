@@ -1,4 +1,4 @@
-# Ercot Data Analysis
+# Ercot Solar Data Analysis
 
 ## Project Overview
 This notebook presents a comprehensive data analysis and machine learning project using solar energy generation and demand data from ERCOT (Electric Reliability Council of Texas). The primary goals are to explore patterns in solar power production and energy load demand across Texas regions and build predictive models using weather features and historical patterns.
