@@ -57,11 +57,16 @@ The dataset includes:
 - The relationship betweeen temperature and energy generation follows a similar trend across all regions.
 - **Note: the regional data sourced from ERCOT (solar energy source) does not completely align with regions outlined by NSRDB (temperature source). ERCOT categorizes its regions as:FarWest, West, CenterWest, NorthWest, SouthEast, CenterEast, Coast, etc. NSRDB defines its regions simply as North, South, East ('Houston'), and West. See how the regions compare below:**
 <p align="center">
-  <img src="images/ERCOT_region_map.png" alt="ERCOT Region Map" width="42%" />
-  <img src="images/NSRB_region_map.png" alt="NSRDB Region Map" width="45%" />
+  <figure style="display: inline-block; text-align: center; margin: 0 10px;">
+    <img src="images/ERCOT_region_map.png" alt="ERCOT Region Map" width="42%" />
+    <figcaption>ERCOT Region Map</figcaption>
+  </figure>
+  <figure style="display: inline-block; text-align: center; margin: 0 10px;">
+    <img src="images/NSRB_region_map.png" alt="NSRDB Region Map" width="45%" />
+    <figcaption>NSRDB Region Map</figcaption>
+  </figure>
 </p>
 
-  
 ## 📌 Machine Learning Summary:
 ### Forecasting
 - With recursive models errors tend to compound, and they did not do a great job of accurately predicting solar energy generation. Adding more features did not neccessarily result in better predictions.
@@ -79,7 +84,7 @@ Cross-validation and test performance measured using:
 - **Best fold MAE:** `946.74`
 - **Best fold R²:** `0.932`
 
-## 📊 Visualizations
+## 📊 Visualizations:
 - Actual vs. predicted plot for 1st round of recursive forecasting
 ![Forecast vs Actual](images/energy_forecast_vs_actual.png)
 - Multi-panel 24-hour forecast comparisons
