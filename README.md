@@ -29,15 +29,14 @@ The dataset includes:
 - `hour`: Hour of the day (0–23)
 - `dayofweek`: Day of the week (0 = Monday, 6 = Sunday)
 - `month`: Month of the year (1–12)
-- `is_weekend`: Binary flag indicating whether the day is a weekend (1) or not (0)
 
 **Lag & Rolling Features (Engineered)**
 
-- `lag_1`, `lag_2`, `lag_3`, `lag_24`, `lag_48`, `lag_168`: Solar generation values from prior time steps (1 hour, 1 day, etc.)
+- `lag_1`, `lag_2`, `lag_3`...`lag_168`, .: Solar generation values from prior time steps (1 hour, 1 day, etc.)
 - `rolling_mean_6`: Rolling mean of solar_system over the previous 6 hours
 - `rolling_std_6`: Rolling standard deviation of solar_system over the previous 6 hours
 
-## 📈 Modeling Approaches
+## 📈 Modeling Approaches:
 #### 1. **Recursive Forecasting** (Linear Regression and Gradient Boosting)
 - Linear Regression for baseline model
 - Recursive forecast using Gradient Boosting predicts 1 hour at a time, feeds predictions back in
@@ -51,12 +50,15 @@ The dataset includes:
 
 ## 📌 EDA Summary:
 - Distribution of **system load is right-skewed**, and begins to flatten out in values above ~58,000 MW. This suggests that **higher energy demans occur less frequently**.
+![Histogram Showing Distribution of System Load Demand](images/sys_load_dist.png) 
 - The **NorthCentral and Coat areas had the highest grid demand**, but the **Farwest and Fareast areas generate the most solar energy**.
 - The **relationship between temperature and load appears consistent across regions**, with the South region having the highest temperatures and load values.
-  *Note: the regional data sourced from ERCOT (solar energy source) does not completely align with regions outlined by NSRDB (temperature source). ERCOT categorizes its regions as:FarWest, CenterWest, NorthWest, SouthEast, CenterEast, Coast, and FarEast. NSRDB defines its regions as North, South, East ('Houston'), and West.
+![Scatter Plot Showing Temperature vs. Load Across 4 Regions](images/temp_vs_load.png) 
+- The relationship betweeen temperature and energy generation follows a similar trend across all regions.
+- **Note: the regional data sourced from ERCOT (solar energy source) does not completely align with regions outlined by NSRDB (temperature source). ERCOT categorizes its regions as:FarWest, West, CenterWest, NorthWest, SouthEast, CenterEast, Coast, etc. NSRDB defines its regions simply as North, South, East ('Houston'), and West. See how the regions compare below:**
   {INSERT IMAGES}
   
-## 📌 Machine Learning Takeaways:
+## 📌 Machine Learning Summary:
 ### Forecasting
 - With recursive models errors tend to compound, and they did not do a great job of accurately predicting solar energy generation. Adding more features did not neccessarily result in better predictions.
 - The direct models achieved higher stability and better short-horizon accuracy
@@ -75,5 +77,6 @@ Cross-validation and test performance measured using:
 
 ## 📊 Visualizations
 - Actual vs. predicted plot for 1st round of recursive forecasting
+![Forecast vs Actual](images/energy_forecast_vs_actual.png)
 - Multi-panel 24-hour forecast comparisons
-- Rolling errors and seasonal pattern reflections
+![Multi-panel Direct Forecasting Windows 1-6](images/solar_forecast_multi_window.png) 
