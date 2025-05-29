@@ -88,4 +88,11 @@ Cross-validation and test performance measured using:
 - Actual vs. predicted plot for 1st round of recursive forecasting
 ![Forecast vs Actual](images/energy_forecast_vs_actual.png)
 - Multi-panel 24-hour forecast comparisons
-![Multi-panel Direct Forecasting Windows 1-6](images/solar_forecast_multi_window.png) 
+![Multi-panel Direct Forecasting Windows 1-6](images/solar_forecast_multi_window.png)
+
+## 🔭 Next Steps:
+
+While I achieved my main goal for this project in executing an end-to-end solar energy forecasting pipeline, there are several directions for further improvement and experimentation:
+- **Hyperparameter Tuning**: Perform grid search or randomized search to optimize GradientBoostingRegressor parameters for potentially improved performance.
+- **Feature Expansion**: Explore additional weather-based features (e.g., cloud cover, humidity, which heavily impact solar enegy generation) or lag variables for better modeling of the patterns.
+- **Model Comparison**: Evaluate additional models such as `XGBoost`, `LightGBM`, or even begin exploring deep learning methods for capturing nonlinear trends.
