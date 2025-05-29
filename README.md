@@ -62,7 +62,7 @@ The dataset includes:
     <figcaption>ERCOT Region Map</figcaption>
   </figure>
   <figure style="display: inline-block; text-align: center; margin: 0 10px;">
-    <img src="images/NSRB_region_map.png" alt="NSRDB Region Map" width="45%" />
+    <img src="images/NSRDB_region_map.png" alt="NSRDB Region Map" width="45%" />
     <figcaption>NSRDB Region Map</figcaption>
   </figure>
 </p>
