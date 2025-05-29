@@ -56,7 +56,11 @@ The dataset includes:
 ![Scatter Plot Showing Temperature vs. Load Across 4 Regions](images/temp_vs_load.png) 
 - The relationship betweeen temperature and energy generation follows a similar trend across all regions.
 - **Note: the regional data sourced from ERCOT (solar energy source) does not completely align with regions outlined by NSRDB (temperature source). ERCOT categorizes its regions as:FarWest, West, CenterWest, NorthWest, SouthEast, CenterEast, Coast, etc. NSRDB defines its regions simply as North, South, East ('Houston'), and West. See how the regions compare below:**
-  {INSERT IMAGES}
+<p align="center">
+  <img src="images/ERCOT_region_map.png" alt="ERCOT Region Map" width="42%" />
+  <img src="images/NSRB_region_map.png" alt="NSRDB Region Map" width="45%" />
+</p>
+
   
 ## 📌 Machine Learning Summary:
 ### Forecasting
